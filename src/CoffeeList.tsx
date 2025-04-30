@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import Card from './Card';
 
 export default function CoffeeList() {
-  const [coffeeData, setCoffeeData] = useState<{ id: number; name: string }[]>([]);
+  const [coffeeData, setCoffeeData] = useState<{ id: number; name: string, image: string, price: number, rating: number, votes: number, popular: true }[]>([]);
 
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json')
@@ -13,11 +14,7 @@ export default function CoffeeList() {
   return (
     <div>
       {coffeeData.map((coffee) => (
-        <div key={coffee.id}>
-          <h2>
-            {coffee.name}
-          </h2>
-        </div>
+        <Card key={coffee.id} coffee={coffee} />
       ))}
     </div>
   );
