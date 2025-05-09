@@ -12,10 +12,10 @@ export default function CoffeeList() {
   }, []);
 
   return (
-    <div>
+    <>
       {coffeeData.map((coffee) => (
         <Card key={coffee.id} coffee={coffee} />
       ))}
-    </div>
+    </>
   );
 }
