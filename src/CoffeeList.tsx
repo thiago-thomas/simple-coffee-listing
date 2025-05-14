@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import Card from './Card';
 
-export default function CoffeeList() {
+export default function CoffeeList({ onlyAvailable }: { onlyAvailable?: boolean }) {
   const [coffeeData, setCoffeeData] = useState<{
     id: number;
     name: string;
     image: string;
-    price: number;
-    rating: number;
+    price: string;
+    rating: string;
     votes: number;
-    popular: true;
+    popular: boolean;
+    available: boolean;
   }[]>([]);
 
   useEffect(() => {
@@ -25,9 +26,11 @@ export default function CoffeeList() {
 
   return (
     <>
-      {coffeeData.map((coffee) => (
-        <Card key={coffee.id} coffee={coffee} />
-      ))}
+      {coffeeData
+        .filter((coffee) => !onlyAvailable || coffee.available)
+        .map((coffee) => (
+          <Card key={coffee.id} coffee={coffee} />
+        ))}
     </>
   );
 }

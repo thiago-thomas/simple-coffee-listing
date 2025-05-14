@@ -1,7 +1,9 @@
 import './App.css'
 import CoffeeList from './CoffeeList'
+import { useState } from 'react'
 
 function App() {
+  const [activeButton, setActiveButton] = useState('all')
   return (
     <div className='bg-[#1c1d1f] mx-8 my-20 pb-14 rounded-lg'>
       <div className='text-center px-10 pt-14 pb-5 bg-[url(vector.svg)] bg-contain bg-no-repeat bg-center'>
@@ -11,11 +13,21 @@ function App() {
         </p>
       </div>
       <div className='flex justify-center gap-2 mb-10'>
-        <button className='bg-[#63686f] px-2 py-2 rounded-lg font-bold cursor-pointer'>All Products</button>
-        <button className='bg-transparent px-2 py-2 rounded-lg font-bold cursor-pointer'>Available Now</button>
+        <button
+          className={`px-2 py-2 rounded-lg font-bold cursor-pointer ${activeButton === 'all' ? 'bg-[#63686f]' : 'bg-transparent'}`}
+          onClick={() => setActiveButton('all')}
+        >
+          All Products
+        </button>
+        <button
+          className={`px-2 py-2 rounded-lg font-bold cursor-pointer ${activeButton === 'available' ? 'bg-[#63686f]' : 'bg-transparent'}`}
+          onClick={() => setActiveButton('available')}
+        >
+          Available Now
+        </button>
       </div>
       <div className="flex flex-col justify-center items-center gap-10 flex-wrap">
-        <CoffeeList />
+        <CoffeeList onlyAvailable={activeButton === 'available'} />
       </div>
     </div>
   )

@@ -2,10 +2,11 @@ interface Coffee {
   id: number;
   name: string;
   image: string;
-  price: number;
-  rating: number;
+  price: string;
+  rating: string;
   votes: number;
-  popular: true;
+  popular: boolean;
+  available: boolean;
 }
 
 export default function Card({ coffee }: { coffee: Coffee }) {
@@ -18,10 +19,10 @@ export default function Card({ coffee }: { coffee: Coffee }) {
         <p className="bg-[#bee3cc] text-[#2d3232] text-md font-bold px-2 py-1 rounded-sm">{coffee.price}</p>
       </div>
       <div className="flex items-center gap-1">
-        {coffee.rating > 0 ? (
+        {Number(coffee.rating) > 0 ? (
           <>
             <img src="Star_fill.svg" alt="Star filled" className="w-7 h-7" />
-            <span className="text-lg font-bold">{coffee.rating}</span>
+            <span className="text-lg font-bold">{Number(coffee.rating).toFixed(1)}</span>
             <span className="text-lg font-semibold text-[#63686f]">({coffee.votes} votes)</span>
           </>
         ) : (
