@@ -28,24 +28,29 @@ export default function Card({ coffee }: { coffee: Coffee }) {
           {coffee.price}
         </p>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex justify-between items-center">
         {Number(coffee.rating) > 0 ? (
-          <>
+          <div className="flex items-center gap-1">
             <img src="Star_fill.svg" alt="Star filled" className="w-7 h-7" />
             <span className="text-lg font-bold">
               {Number(coffee.rating).toFixed(1)}
             </span>
-            <span className="text-lg font-semibold text-[#63686f]">
+            <span className="text-lg font-semibold inline-block text-[#63686f]">
               ({coffee.votes} votes)
             </span>
-          </>
+          </div>
         ) : (
-          <>
+          <div className="flex items-center gap-1">
             <img src="Star.svg" alt="Star" className="w-7 h-7" />
             <span className="text-lg font-semibold text-[#63686f]">
               No ratings
             </span>
-          </>
+          </div>
+        )}
+        {!coffee.available && (
+          <span className="text-base font-semibold text-orange-500">
+            Sold out
+          </span>
         )}
       </div>
     </div>

@@ -5,7 +5,7 @@ import { useState } from "react";
 function App() {
   const [activeButton, setActiveButton] = useState("all");
   return (
-    <div className="mx-8 my-20 pt-4 pb-14 rounded-lg bg-[#1c1d1f]">
+    <div className="mx-8 lg:mx-12 xl:mx-16 my-16 lg:my-32 pt-4 pb-14 rounded-lg bg-[#1c1d1f]">
       <div className="px-10 pt-10 pb-5 text-center bg-[url(vector.svg)] bg-contain bg-no-repeat bg-center">
         <h1 className="text-4xl mb-4 font-medium">Our Collection</h1>
         <p className="text-lg text-[#63686f] font-semibold">
@@ -32,7 +32,7 @@ function App() {
           Available Now
         </button>
       </div>
-      <div className="flex flex-col justify-center items-center gap-10 flex-wrap">
+      <div className="mx-auto px-4 max-w-4xl flex justify-center items-center gap-10 flex-wrap">
         <CoffeeList onlyAvailable={activeButton === "available"} />
       </div>
     </div>
