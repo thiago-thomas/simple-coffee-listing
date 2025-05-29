@@ -2,7 +2,7 @@
 
 body {
   @apply bg-black text-white font-sans;
-  background-image: url("../public/bg-cafe.jpg");
+  background-image: url("../bg-cafe.jpg");
   background-size: contain;
   background-repeat: no-repeat;
 }

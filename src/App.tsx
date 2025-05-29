@@ -8,7 +8,7 @@ function App() {
     <div className="mx-8 lg:mx-12 xl:mx-16 my-16 lg:my-32 pt-4 pb-14 rounded-lg bg-[#1c1d1f]">
       <div className="px-10 pt-10 pb-5 text-center bg-[url(vector.svg)] bg-contain bg-no-repeat bg-center">
         <h1 className="text-4xl mb-4 font-medium">Our Collection</h1>
-        <p className="text-lg text-[#63686f] font-semibold">
+        <p className="text-lg text-[#63686f] font-semibold max-w-xl text-center mx-auto">
           Introducing our Coffee Collection, a selection of unique coffees from
           different roast types and origins expertly roasted in small batches
           and shipped fresh weekly.
