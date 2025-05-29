@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Simple Coffee Listining by Thiago Thomas | devChallenges</h1>
+<h1 align="center">Simple Coffee Listing by Thiago Thomas | devChallenges</h1>
 
 <div align="center">
    Solution for a challenge <a href="https://devchallenges.io/challenge/simple-coffee-listing" target="_blank">Simple Coffee Listing</a> from <a href="http://devchallenges.io" target="_blank">devChallenges.io</a>.
@@ -8,12 +8,8 @@
 
 <div align="center">
   <h3>
-    <a href="{https://your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="{https://your-url-to-the-solution}">
-      Solution
+    <a href="https://simple-coffee-listing-thiago-thomas.netlify.app">
+      My Demo Solution
     </a>
     <span> | </span>
     <a href="https://devchallenges.io/challenge/simple-coffee-listing">
